@@ -17,7 +17,6 @@ import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
-import com.example.fitness.model1.TypeGender;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -161,24 +160,20 @@ public class MainActivity extends AppCompatActivity {
 
     private void populateSpinner() {
 
-        TypeGender objMovies = new TypeGender() {
-            @Override
-            public List<String> getGender() {
 
                 ArrayList<String> gender = new ArrayList<>();
 
                 gender.add("Male");
                 gender.add("FeMale");
 
-                return gender;
-            }
-
-        };
-        List <String> gender = objMovies.getGender();
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,gender);
         spinner.setAdapter(adapter);
+            }
 
-    }
+
+
+
+
 
     public void openTimerActivity(){
         Intent intent = new Intent(this ,TimerActivity.class);
